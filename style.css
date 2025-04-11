@@ -1,75 +1,145 @@
-/* CSS Styles */
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4; /* Added a light background for the body */
 }
 
 #full-wrapper {
   background-image: url("assets/background.jpg");
   background-repeat: repeat;
+  min-height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically (optional, but can be nice) */
+  padding: 20px; /* Add some padding around the main wrapper */
 }
 
 #content-wrapper {
-  max-width: 1280px;
+  max-width: 1200px; /* Slightly reduced max-width */
+  width: 100%; /* Make it take full width within its container */
   margin: 0 auto;
   background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Slightly rounded corners */
+  overflow: hidden; /* Prevent content from overflowing rounded corners */
 }
 
 header {
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
+  border-bottom: 1px solid #ddd; /* Subtle border */
 }
 
 .header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
-.header-row:first-child {
-  margin-bottom: 10px;
+.header-row:last-child {
+  margin-bottom: 0;
+}
+
+.gift-card {
+  font-size: 0.9em;
 }
 
 .header-title {
-  font-size: 1.5em; /* Example styling, adjust as needed */
+  font-size: 1.8em; /* Slightly larger title */
+  text-align: center; /* Center the title */
+  flex-grow: 1; /* Allow title to take up more space */
+}
+
+.social-links {
+  display: flex;
+  gap: 8px; /* Spacing between social icons */
+}
+
+.social-links a {
+  text-decoration: none;
 }
 
 .header-row-bottom {
-  display: flex; /* Make the row a flex container */
-  justify-content: center; /* Center the links within the row */
+  display: flex;
+  justify-content: center;
+  padding-top: 10px; /* Add some space above the nav */
 }
 
-.header-row-bottom nav a {
-  margin: 0 15px; /* Add spacing between links */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  justify-content: center; /* Center navigation links */
+  gap: 10px; /* Spacing between nav links */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #ddd;
 }
 
 header a:has(img) {
-  /* Targets <a> tags that contain <img> tags */
-  text-decoration: none; /* Removes underlines */
-  margin-right: 12px;
+  text-decoration: none;
+  margin-right: 8px; /* Reduced margin */
 }
 
 #about {
+  padding: 20px; /* Reduced padding */
   display: flex;
-  padding: 40px;
+  flex-direction: column; /* Stack image and text on smaller screens */
   align-items: center;
+  gap: 20px; /* Spacing between image and text */
 }
 
 #about img {
-  width: 50%;
-  max-height: 400px;
+  width: 100%; /* Image takes full width */
+  max-height: none; /* Remove max-height for better responsiveness */
   object-fit: cover;
+  border-radius: 4px;
 }
 
 #about-text {
-  width: 50%;
-  padding-left: 20px;
+  width: 100%; /* Text takes full width */
+  padding-left: 0; /* Remove left padding */
+  text-align: center; /* Center text */
+}
+
+#about-text h2 {
+  font-size: 1.5em; /* Adjusted heading size */
+  margin-bottom: 10px;
+}
+
+#about-text p {
+  line-height: 1.6;
 }
 
 #calendar {
-  padding: 40px;
+  padding: 20px;
   text-align: center;
+}
+
+#calendar h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
+.calendar-container {
+  width: 100%; /* Make the container responsive */
+  overflow: hidden; /* Hide scrollbars if iframe is taller */
+}
+
+.calendar-container iframe {
+  width: 100%; /* Make the iframe responsive */
+  height: 400px; /* Adjust height for mobile */
+  border: 1px solid #777;
 }
 
 footer {
@@ -77,21 +147,72 @@ footer {
   color: white;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Stack columns on smaller screens */
+  align-items: center; /* Center items in columns */
+  gap: 15px; /* Spacing between footer columns */
+  text-align: center;
 }
 
 .footer-column {
-  width: 30%;
+  width: 100%; /* Each column takes full width on small screens */
 }
 
 footer img {
   filter: invert(100%) grayscale(100%) brightness(200%);
+  width: 32px; /* Slightly smaller icons */
+  height: 32px;
+  margin-bottom: 5px;
 }
 
 footer a {
-  filter: invert(100%) grayscale(100%) brightness(200%);
+  color: white;
+  text-decoration: none;
 }
 
 footer a:hover {
   color: yellowgreen;
 }
+
+/* Media Query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+  #about {
+      flex-direction: row;
+      align-items: center;
+      padding: 40px;
+  }
+
+  #about img {
+      width: 50%;
+      max-height: 400px;
+  }
+
+  #about-text {
+      width: 50%;
+      padding-left: 20px;
+      text-align: left;
+  }
+
+  .header-row-bottom {
+      justify-content: flex-start; /* Align nav to the left on larger screens */
+  }
+
+  .main-nav {
+      justify-content: flex-start;
+  }
+
+  #calendar iframe {
+      height: 800px; /* Larger height for desktops */
+  }
+
+  footer {
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: left;
+  }
+
+  .footer-column {
+      width: 30%;
+      align-items: flex-start;
+  }
+}
+</style>
