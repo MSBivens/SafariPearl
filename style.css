@@ -2,76 +2,79 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4; /* Added a light background for the body */
+  background-color: #f4f4f4;
 }
 
 #full-wrapper {
   background-image: url("assets/background.jpg");
   background-repeat: repeat;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically (optional, but can be nice) */
-  padding: 20px; /* Add some padding around the main wrapper */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 #content-wrapper {
-  max-width: 1200px; /* Slightly reduced max-width */
-  width: 100%; /* Make it take full width within its container */
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Slightly rounded corners */
-  overflow: hidden; /* Prevent content from overflowing rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 header {
   background-color: #f0f0f0;
-  padding: 15px; /* Reduced padding */
-  border-bottom: 1px solid #ddd; /* Subtle border */
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-.header-row {
+.top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px; /* Reduced margin */
+  padding-bottom: 10px; /* Space between top and bottom bars */
 }
 
-.header-row:last-child {
-  margin-bottom: 0;
+.logo-container {
+  /* Removed absolute positioning for better flow */
 }
 
-.gift-card {
-  font-size: 0.9em;
+.logo {
+  height: 80px; /* Slightly smaller logo for mobile */
 }
 
 .header-title {
-  font-size: 1.8em; /* Slightly larger title */
-  text-align: center; /* Center the title */
-  flex-grow: 1; /* Allow title to take up more space */
+  font-size: 1.5em; /* Slightly smaller title for mobile */
+  text-align: center;
+  flex-grow: 1;
+  margin-left: 10px; /* Add some space from the logo */
 }
 
 .social-links {
   display: flex;
-  gap: 8px; /* Spacing between social icons */
+  gap: 8px;
 }
 
 .social-links a {
   text-decoration: none;
 }
 
-.header-row-bottom {
+.bottom-bar {
   display: flex;
-  justify-content: center;
-  padding-top: 10px; /* Add some space above the nav */
+  flex-direction: column; /* Stack navigation and gift card on smaller screens */
+  align-items: center; /* Center items in the bottom bar */
+  padding-top: 10px;
 }
 
 .main-nav {
   display: flex;
-  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-  justify-content: center; /* Center navigation links */
-  gap: 10px; /* Spacing between nav links */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px; /* Space between nav and gift card */
 }
 
 .main-nav a {
@@ -86,9 +89,59 @@ header {
   background-color: #ddd;
 }
 
-header a:has(img) {
-  text-decoration: none;
-  margin-right: 8px; /* Reduced margin */
+.gift-card {
+  font-size: 0.9em;
+  text-align: center; /* Center the gift card links */
+}
+
+/* Media query for smaller screens (e.g., tablets and phones) */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column; /* Stack logo, title, and social links */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .header-title {
+    margin-left: 0; /* Reset margin */
+    margin-bottom: 10px;
+  }
+
+  .bottom-bar {
+    padding-top: 15px;
+  }
+
+  .main-nav {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 60px; 
+  }
+
+  .header-title {
+    font-size: 1.3em;
+  }
+
+  .social-links {
+    gap: 6px;
+  }
+
+  .main-nav a {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+
+  .gift-card {
+    font-size: 0.85em;
+  }
 }
 
 #about {

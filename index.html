@@ -32,24 +32,11 @@
   <body>
     <div id="full-wrapper">
       <div id="content-wrapper">
-        <header style="position: relative">
-          <div
-            style="
-              position: absolute;
-              top: 0;
-              left: 10px;
-              height: 100%;
-              display: flex;
-              align-items: center;
-            "
-          >
-            <img
-              src="assets/logo.svg"
-              alt="Safari Pearl Logo"
-              style="height: 100px"
-            />
-          </div>
-          <div class="header-row" style="padding-left: 90px">
+        <header>
+          <div class="top-bar">
+            <div class="logo-container">
+              <img src="assets/logo.svg" alt="Safari Pearl Logo" class="logo" />
+            </div>
             <div class="header-title">Safari Pearl</div>
             <div class="social-links">
               <a
@@ -102,27 +89,17 @@
               </a>
             </div>
           </div>
-          <div
-            class="header-row header-row-bottom"
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding-left: 90px;
-            "
-          >
-            <div style="flex-grow: 1; text-align: center">
-              <nav class="main-nav" style="justify-content: center">
-                <a href="http://safari-pearl.square.site/">Web Store</a>
-                <a href="http://safaripearl.tcgplayerpro.com/"
-                  >Browse Card Singles</a
-                >
-                <a href="http://www.safaripearl.com/wishlist.html"
-                  >Customer Wish Lists</a
-                >
-              </nav>
-            </div>
-            <div class="gift-card" style="text-align: right">
+          <div class="bottom-bar">
+            <nav class="main-nav">
+              <a href="http://safari-pearl.square.site/">Web Store</a>
+              <a href="http://safaripearl.tcgplayerpro.com/"
+                >Browse Card Singles</a
+              >
+              <a href="http://www.safaripearl.com/wishlist.html"
+                >Customer Wish Lists</a
+              >
+            </nav>
+            <div class="gift-card">
               Gift Card:
               <a href="http://squareup.com/gift/CTKKNGJ5T5HKA/order">Buy</a> /
               <a href="http://squareup.com/gift/CTKKNGJ5T5HKA/check-balance"
@@ -153,7 +130,6 @@
             </p>
           </div>
         </section>
-
         <section id="calendar">
           <h2>Calendar of Events</h2>
           <div class="calendar-container">
